@@ -766,9 +766,13 @@ export default function HomePage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif italic text-white/80 leading-[1.2] mb-4">
                 More than a token — a utility layer
               </h2>
-              <p className="text-base sm:text-lg text-white/35 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-white/35 max-w-2xl mx-auto mb-5">
                 $CLAWS is designed with one simple principle: real, platform-native value. Instead of speculation-only mechanics, $CLAWS directly enhances your ClawSetup experience.
               </p>
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-[rgb(255,79,90)]/20 bg-[rgb(255,79,90)]/5 px-4 py-2">
+                <span className="w-2 h-2 rounded-full bg-[rgb(255,79,90)] animate-pulse" />
+                <span className="text-xs font-medium text-white/60">Building in public — PumpFun Build in Public Hackathon participant</span>
+              </div>
             </div>
           </AnimatedSection>
 
