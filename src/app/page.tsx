@@ -467,11 +467,19 @@ export default function HomePage() {
             opens at localhost:3002
           </p>
 
-          <div className="mb-2 opacity-0 animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
+          <div className="mb-4 opacity-0 animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
             <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[rgb(255,79,90)] to-[rgb(255,138,92)] px-7 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[rgb(255,79,90)]/20 hover:shadow-[rgb(255,79,90)]/30 hover:scale-105 transition-all duration-300">
               Access Now
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </Link>
+          </div>
+
+          {/* CA badge */}
+          <div className="opacity-0 animate-fade-in" style={{ animationDelay: '1.1s', animationFillMode: 'forwards' }}>
+            <div className="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2">
+              <span className="text-[10px] font-semibold uppercase tracking-widest text-white/30">CA</span>
+              <span className="text-xs font-mono text-white/50">Coming soon</span>
+            </div>
           </div>
         </div>
       </section>
