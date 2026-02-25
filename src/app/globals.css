@@ -14,11 +14,13 @@
 
   html {
     color-scheme: dark;
+    overflow-x: hidden;
   }
 
   body {
     @apply text-white antialiased;
     background: rgb(var(--bg));
+    overflow-x: hidden;
   }
 
   /* Prevent iOS Safari auto-zoom on input focus (requires >= 16px) */
