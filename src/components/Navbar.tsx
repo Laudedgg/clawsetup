@@ -20,6 +20,13 @@ export default function Navbar() {
             <span className="text-xl font-bold gradient-text">ClawSetup</span>
           </Link>
 
+          <div className="hidden md:flex items-center gap-6">
+            <a href="/#capabilities" className="text-xs text-white/50 hover:text-white transition-colors">Capabilities</a>
+            <a href="/#how-it-works" className="text-xs text-white/50 hover:text-white transition-colors">How it works</a>
+            <a href="/#pricing" className="text-xs text-white/50 hover:text-white transition-colors">Pricing</a>
+            <a href="/#claw" className="text-xs text-white/50 hover:text-white transition-colors">$CLAWS</a>
+          </div>
+
           <div className="flex items-center gap-3">
             <a href="https://x.com/clawsetup" target="_blank" rel="noopener noreferrer"
               className="hidden sm:flex items-center text-white/40 hover:text-white/70 transition-colors">
