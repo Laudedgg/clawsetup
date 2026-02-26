@@ -2,9 +2,7 @@ export type Tier = 'free' | 'tier1' | 'tier2' | 'tier3';
 
 export type PaymentStatus = 'pending' | 'completed' | 'failed' | 'cancelled';
 
-export type PaymentProvider = 'stripe' | 'nowpayments' | 'claw';
-
-export type TierSource = 'payment' | 'claw_holding';
+export type PaymentProvider = 'stripe' | 'nowpayments';
 
 export type VMStatus = 'provisioning' | 'running' | 'stopped' | 'error';
 
@@ -22,8 +20,6 @@ export interface User {
   instanceSlots?: number;
   stripeCustomerId?: string;
   stripeSubscriptionId?: string;
-  solanaWallet?: string;
-  tierSource?: TierSource;
   isAdmin?: boolean;
   referralCode?: string;
   referredBy?: string;
@@ -41,8 +37,6 @@ export interface Payment {
   txHash?: string;
   stripeSessionId?: string;
   nowpaymentsId?: string;
-  clawPaymentId?: string;
-  solanaSignature?: string;
   createdAt: Date;
   updatedAt: Date;
 }

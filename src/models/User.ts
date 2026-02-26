@@ -19,8 +19,6 @@ const UserSchema = new Schema<IUser>(
     },
     vmIds: [{ type: String }],
     instanceSlots: { type: Number, default: 1 },
-    solanaWallet: { type: String },
-    tierSource: { type: String, enum: ['payment', 'claw_holding'], default: 'payment' },
     stripeCustomerId: { type: String },
     stripeSubscriptionId: { type: String },
     isAdmin: { type: Boolean, default: false },

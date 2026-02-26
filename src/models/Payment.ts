@@ -7,7 +7,7 @@ const PaymentSchema = new Schema<IPayment>(
     amount: { type: Number, required: true },
     provider: {
       type: String,
-      enum: ['stripe', 'nowpayments', 'claw'],
+      enum: ['stripe', 'nowpayments'],
       required: true
     },
     status: { 
@@ -23,8 +23,6 @@ const PaymentSchema = new Schema<IPayment>(
     txHash: { type: String },
     stripeSessionId: { type: String },
     nowpaymentsId: { type: String },
-    clawPaymentId: { type: String },
-    solanaSignature: { type: String },
   },
   { timestamps: true }
 );

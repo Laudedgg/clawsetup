@@ -129,8 +129,6 @@ export const authOptions: NextAuthOptions = {
             token.tier = dbUser.tier;
             token.paymentStatus = dbUser.paymentStatus;
             token.isAdmin = !!dbUser.isAdmin || adminEmails.includes(dbUser.email.toLowerCase());
-            token.solanaWallet = dbUser.solanaWallet || null;
-
             // Lazy-generate referral code for users that don't have one yet
             if (!dbUser.referralCode) {
               try {
@@ -158,7 +156,6 @@ export const authOptions: NextAuthOptions = {
         (session.user as any).tier = (token as any).tier;
         (session.user as any).paymentStatus = (token as any).paymentStatus;
         (session.user as any).isAdmin = (token as any).isAdmin || false;
-        (session.user as any).solanaWallet = (token as any).solanaWallet || null;
       }
       return session;
     },

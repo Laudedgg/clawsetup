@@ -70,10 +70,6 @@ export const CRYPTO_CURRENCIES = ['USDC', 'BTC', 'ETH', 'USDTTRC20'];
 
 export const NOWPAYMENTS_MIN_AMOUNT = 10; // USD
 
-export const CLAW_DISCOUNT_PERCENT = 30;
-export const CLAW_HOLDING_THRESHOLD_USD = 300;
-export const CLAW_PAYMENT_EXPIRY_MINUTES = 30;
-
 export const GCP_MACHINE_TYPE = 'e2-small';
 export const GCP_DISK_SIZE_GB = 30;
 export const GCP_NETWORK_TIER = 'STANDARD';

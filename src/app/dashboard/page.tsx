@@ -2,10 +2,9 @@
 
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import TierBadge from '@/components/TierBadge';
-import PhantomConnect from '@/components/PhantomConnect';
 
 const TIER_ORDER = ['free', 'tier1', 'tier2', 'tier3'];
 const isUnlocked = (tier: string, min: string) =>
@@ -30,12 +29,6 @@ const ICONS: Record<string, React.ReactNode> = {
 export default function DashboardPage() {
   const { data: session, status, update } = useSession();
   const router = useRouter();
-  const [holdingInfo, setHoldingInfo] = useState<{
-    wallet: string | null;
-    clawBalance: number;
-    clawValueUsd: number;
-    meetsThreshold: boolean;
-  } | null>(null);
 
   useEffect(() => {
     if (status === 'unauthenticated') router.push('/auth/login');
@@ -51,19 +44,6 @@ export default function DashboardPage() {
     }
   }, [update]);
 
-  // Check $CLAWS holding on dashboard load if wallet is connected
-  useEffect(() => {
-    const wallet = (session?.user as any)?.solanaWallet;
-    if (wallet) {
-      fetch('/api/wallet/verify-holding')
-        .then(res => res.json())
-        .then(data => {
-          if (data.wallet) setHoldingInfo(data);
-        })
-        .catch(() => {}); // silent fail
-    }
-  }, [session]);
-
   if (status === 'loading') {
     return (
       <div className="flex items-center justify-center h-64">
@@ -76,7 +56,6 @@ export default function DashboardPage() {
 
   const tier = (session.user as any)?.tier || 'free';
   const isAdmin = (session.user as any)?.isAdmin;
-  const solanaWallet = (session.user as any)?.solanaWallet;
   const firstName = session.user?.name?.split(' ')[0] || 'there';
 
   return (
@@ -109,63 +88,6 @@ export default function DashboardPage() {
               Upgrade Plan
             </Link>
           )}
-        </div>
-      </div>
-
-      {/* $CLAWS Holder Access card */}
-      <div
-        className="rounded-xl border border-purple-500/20 p-5"
-        style={{ background: 'rgba(12,13,18,0.95)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
-      >
-        <div className="flex items-start gap-4">
-          <div className="shrink-0 w-10 h-10 rounded-lg bg-purple-500/15 flex items-center justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(168,85,247)" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="font-semibold text-[13px] text-purple-300 mb-1">$CLAWS Token Access</p>
-            {holdingInfo?.meetsThreshold ? (
-              <div>
-                <p className="text-[11px] text-emerald-400 mb-1.5">Assisted plan active via $CLAWS holdings</p>
-                <p className="text-[10px] text-white/30">
-                  Holding {holdingInfo.clawBalance.toLocaleString()} $CLAWS (${holdingInfo.clawValueUsd.toLocaleString()})
-                </p>
-              </div>
-            ) : holdingInfo?.wallet ? (
-              <div>
-                <p className="text-[11px] text-white/50 mb-1.5">
-                  Hold $300+ worth of $CLAWS for free Assisted plan access
-                </p>
-                <p className="text-[10px] text-white/30">
-                  Current: {holdingInfo.clawBalance.toLocaleString()} $CLAWS (${holdingInfo.clawValueUsd.toLocaleString()})
-                </p>
-              </div>
-            ) : (
-              <p className="text-[11px] text-white/50 mb-2">
-                Connect your Phantom wallet to check $CLAWS holdings. Hold $300+ for free Assisted plan access.
-              </p>
-            )}
-            {!solanaWallet && (
-              <div className="mt-2.5">
-                <PhantomConnect
-                  compact
-                  onConnect={(data) => {
-                    setHoldingInfo({
-                      wallet: data.wallet,
-                      clawBalance: data.clawBalance,
-                      clawValueUsd: data.clawValueUsd,
-                      meetsThreshold: data.clawValueUsd >= 300,
-                    });
-                    if (data.tierGranted) router.refresh();
-                  }}
-                />
-              </div>
-            )}
-            {solanaWallet && (
-              <div className="mt-2">
-                <PhantomConnect compact connectedWallet={solanaWallet} />
-              </div>
-            )}
-          </div>
         </div>
       </div>
 

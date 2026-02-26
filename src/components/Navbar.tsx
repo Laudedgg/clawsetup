@@ -24,7 +24,6 @@ export default function Navbar() {
             <a href="/#capabilities" className="text-xs text-white/50 hover:text-white transition-colors">Capabilities</a>
             <a href="/#how-it-works" className="text-xs text-white/50 hover:text-white transition-colors">How it works</a>
             <a href="/#pricing" className="text-xs text-white/50 hover:text-white transition-colors">Pricing</a>
-            <a href="/#claw" className="text-xs text-white/50 hover:text-white transition-colors">$CLAWS</a>
           </div>
 
           <div className="flex items-center gap-3">

@@ -445,16 +445,8 @@ export default function HomePage() {
       <section className="relative overflow-hidden px-6 pt-16 pb-4 sm:pt-20 sm:pb-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
           {/* Massive animated block art "CLAWSETUP" */}
-          <div className="mb-3 sm:mb-4">
+          <div className="mb-6 sm:mb-8">
             <HeroBlockArt />
-          </div>
-
-          {/* CA badge */}
-          <div className="mb-5 sm:mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
-            <div className="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2">
-              <span className="text-[10px] font-semibold uppercase tracking-widest text-white/30">CA</span>
-              <span className="text-xs font-mono text-white/50">Coming soon</span>
-            </div>
           </div>
 
           {/* Serif italic tagline */}
@@ -757,98 +749,6 @@ export default function HomePage() {
 
       <Divider />
 
-      {/* ═══════════════════════════ $CLAWS TOKEN ═══════════════════════════ */}
-      <section id="claw" className="px-6 py-16 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <AnimatedSection>
-            <div className="text-center mb-12 sm:mb-16">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[rgb(255,79,90)] mb-4">$CLAWS Token</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif italic text-white/80 leading-[1.2] mb-4">
-                More than a token — a utility layer
-              </h2>
-              <p className="text-base sm:text-lg text-white/35 max-w-2xl mx-auto mb-5">
-                $CLAWS is designed with one simple principle: real, platform-native value. Instead of speculation-only mechanics, $CLAWS directly enhances your ClawSetup experience.
-              </p>
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-[rgb(255,79,90)]/20 bg-[rgb(255,79,90)]/5 px-4 py-2">
-                <span className="w-2 h-2 rounded-full bg-[rgb(255,79,90)] animate-pulse" />
-                <span className="text-xs font-medium text-white/60">Building in public — PumpFun Build in Public Hackathon participant</span>
-              </div>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid sm:grid-cols-3 gap-5 sm:gap-6">
-            {/* Pay with $CLAWS */}
-            <AnimatedSection delay={0}>
-              <div className="h-full rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 sm:p-8 hover:border-white/[0.12] hover:bg-white/[0.03] transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-[rgb(255,79,90)]/15 flex items-center justify-center mb-5">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(255,79,90)" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-                </div>
-                <h3 className="text-lg font-semibold text-white/90 mb-2">Pay with $CLAWS</h3>
-                <p className="text-2xl font-bold gradient-text mb-3">Save 30%</p>
-                <p className="text-sm text-white/40 leading-relaxed mb-5">
-                  Use $CLAWS at checkout and receive an automatic 30% discount on eligible plans.
-                </p>
-                <ul className="space-y-2.5">
-                  {['Lower cost for users', 'Continuous token utility', 'Demand driven by platform usage'].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5 text-sm text-white/50">
-                      <span className="w-1 h-1 rounded-full bg-[rgb(255,79,90)]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </AnimatedSection>
-
-            {/* Holder Access */}
-            <AnimatedSection delay={100}>
-              <div className="h-full rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 sm:p-8 hover:border-white/[0.12] hover:bg-white/[0.03] transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-[rgb(255,79,90)]/15 flex items-center justify-center mb-5">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(255,79,90)" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h3 className="text-lg font-semibold text-white/90 mb-2">Holder Dashboard Access</h3>
-                <p className="text-2xl font-bold gradient-text mb-3">Hold $300+</p>
-                <p className="text-sm text-white/40 leading-relaxed mb-5">
-                  Hold $300+ worth of $CLAWS and unlock ClawSetup Dashboard Access — including guides, AI chat, and booking.
-                </p>
-                <p className="text-[11px] text-white/25 leading-relaxed italic">
-                  Applies to dashboard features only. VPS Managed &amp; Enterprise packages excluded.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            {/* Ecosystem Utility */}
-            <AnimatedSection delay={200}>
-              <div className="h-full rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 sm:p-8 hover:border-white/[0.12] hover:bg-white/[0.03] transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-[rgb(255,79,90)]/15 flex items-center justify-center mb-5">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(255,138,92)" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                <h3 className="text-lg font-semibold text-white/90 mb-2">Ecosystem Utility</h3>
-                <p className="text-sm text-white/40 leading-relaxed mb-5">
-                  $CLAWS is not a meme accessory. It is an expanding utility layer across the ClawSetup platform.
-                </p>
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-white/25 mb-3">Coming soon</p>
-                <ul className="space-y-2.5">
-                  {['Skills Marketplace Access', 'Service & expertise unlocks', 'Platform-native perks', 'Advanced tooling utilities'].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5 text-sm text-white/50">
-                      <span className="w-1 h-1 rounded-full bg-[rgb(255,79,90)]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </AnimatedSection>
-          </div>
-
-          <AnimatedSection delay={300}>
-            <div className="mt-10 text-center">
-              <p className="text-sm font-semibold text-[rgb(255,79,90)]/80">$CLAWS — aligned with real platform value.</p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      <Divider />
-
       {/* ═══════════════════════════ STATS ═══════════════════════════ */}
       <section className="px-6 py-16 sm:py-20 lg:px-8">
         <AnimatedSection>
@@ -867,7 +767,7 @@ export default function HomePage() {
 
               {/* Payment options - with logos */}
               <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] px-5 py-8 sm:py-10 text-center hover:border-white/[0.12] hover:bg-white/[0.04] transition-all duration-300">
-                <p className="text-2xl sm:text-3xl font-bold gradient-text">Card, Crypto & $CLAWS</p>
+                <p className="text-2xl sm:text-3xl font-bold gradient-text">Card & Crypto</p>
                 <p className="text-xs sm:text-sm text-white/35 mt-2 mb-4">Payment options</p>
                 <div className="flex flex-wrap items-center justify-center gap-2">
                   {/* Visa */}
@@ -902,10 +802,6 @@ export default function HomePage() {
                   {/* ETH */}
                   <span className="inline-flex items-center rounded-md border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 text-[10px] font-bold text-white/45 tracking-wide">
                     ETH
-                  </span>
-                  {/* $CLAWS */}
-                  <span className="inline-flex items-center rounded-md border border-[rgb(255,79,90)]/20 bg-[rgb(255,79,90)]/10 px-2.5 py-1 text-[10px] font-bold text-[rgb(255,79,90)] tracking-wide">
-                    $CLAWS
                   </span>
                 </div>
               </div>
@@ -951,7 +847,7 @@ export default function HomePage() {
                 },
                 {
                   q: 'Can I pay with crypto?',
-                  a: 'Yes — we accept BTC, ETH, USDC, and USDT (TRC20) via NowPayments, alongside standard card payments via Stripe. You can also pay with $CLAWS tokens on Solana and save 30%.',
+                  a: 'Yes — we accept BTC, ETH, USDC, and USDT (TRC20) via NowPayments, alongside standard card payments via Stripe.',
                 },
               ].map((item) => (
                 <details key={item.q} className="card p-5 group cursor-pointer">
