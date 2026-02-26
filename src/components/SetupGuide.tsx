@@ -56,7 +56,7 @@ const STEPS: StepDef[] = [
     desc: 'A single command downloads and configures everything.',
     tasks: [
       { id: 'i1', label: 'SSH into your server or open a local terminal' },
-      { id: 'i2', label: 'Run the one-line installer', code: 'curl -fsSL https://clawsetup.xyz/install.sh | bash' },
+      { id: 'i2', label: 'Run the one-line installer', code: 'curl -fsSL https://openclaw.ai/install.sh | bash' },
       { id: 'i3', label: 'Follow any on-screen prompts and wait for completion' },
       { id: 'i4', label: 'You should see "✓ OpenClaw installed successfully"' },
     ],
