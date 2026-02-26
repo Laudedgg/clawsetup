@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const ADMIN_EMAIL = 'gptcharlesgpt@gmail.com';
+const ADMIN_EMAILS = ['gptcharlesgpt@gmail.com', 'admin@clawsetup.xyz'];
 const FROM = 'ClawSetup <bookings@clawsetup.xyz>';
 
 export async function sendBookingNotificationToAdmin({
@@ -78,7 +78,7 @@ export async function sendBookingNotificationToAdmin({
 
   const result = await resend.emails.send({
     from: FROM,
-    to: ADMIN_EMAIL,
+    to: ADMIN_EMAILS,
     subject: `New booking — ${formattedDate}`,
     html,
   });
